@@ -4,7 +4,6 @@
 import sys
 import os
 import site
-import re
 
 
 class system_environment(object):
@@ -26,7 +25,3 @@ class system_environment(object):
     def __exit__(self, *args, **kwargs):
         # remove from path
         sys.path.remove(self.sys_path)
-        for k, v in sys.modules.items():
-            # and restore module namespace to its original state
-            if hasattr(v, '__file__') and re.search(self.sys_path, v.__file__):
-                del sys.modules[k]
