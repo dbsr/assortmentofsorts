@@ -1,0 +1,9 @@
+{
+  "name": "addonprofiles",
+  "fullName": "Addon-Profiles",
+  "id": "addonProfiles",
+  "description": "Profiles for your addons.",
+  "author": "Daan Mathot",
+  "license": "MPL 2.0",
+  "version": "0.2.0"
+}

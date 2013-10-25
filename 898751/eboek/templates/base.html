@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+        <link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.css"/>
+        <link type="text/css" rel="stylesheet" href="/static/css/override.css"/>
+        <link type="text/css" rel="stylesheet" href="/static/css/footer.css"/>
+        <script src="/static/bootstrap/js/jquery.js"/></script>
+        <script src="/static/bootstrap/js/bootstrap.js"/></script>
+        <script src="/static/bootstrap/js/bootstrap-modal.js") }}></script>
+   </head>
+   <body>
+        <div id="wrap">
+            <div class="container">
+                {% if not exit %}
+               <div class="navbar navbar-inverse">
+                    <div class="navbar-inner" style="font-weight: 400; font-size: 20px;">
+                        <div class="container" style="width: auto;">
+                                <a class="brand" href="/" style="font-weight: 400; font-size: 24px;">Eboek</a>
+                            <div class="nav-collapse">
+                                <ul class="nav">
+                                    <li class="active">
+                                        <a href="/browse/page1">Browse</a>
+                                        </li>
+                                        <li>
+                                        <a href="/booklist">Boekenlijst</a>
+                                        </li>
+                                        <li>
+                                        <a href="/logout">Uitloggen</a>
+                                        </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div id="content">{% block content %}{% endblock %}</div>
+            </div>
+        {% if not exit %}
+            <div id="push"></div>
+        </div>
+        <div id="footer">
+            <div id="container">
+               <p class="muted_credit_mid"><a href="mailto:dydrmntion@gmail.com">@</a>dbsr</p>
+            </div>
+        </div>
+        {% endif %}
+
+    </body>
+</html>

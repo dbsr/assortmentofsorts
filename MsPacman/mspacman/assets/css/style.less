@@ -1,0 +1,147 @@
+// colors
+@theme_focus: #EDC951;
+@theme_link: #00A0B0;
+@theme_red: #cc333f;
+@theme_orange: #eb6841;
+@theme_brown: #6f5f3f;
+@theme_border: #CBCBCB;
+@theme_background: #E0E0E0;
+@theme_text: #444546;
+
+html {
+  body {
+    color: @theme_text;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+      color: @theme_link;
+    }
+
+    header {
+      text-align: center;
+      .logo-wrapper {
+        display:inline-block;
+        .top {
+          display: inline-block;
+          font-weight: 700;
+          letter-spacing: .40em;
+          margin-bottom: 0;
+          border-bottom: .1em solid @theme_link;
+          vertical-align: center;
+          padding: 0;
+
+          &.first {
+            color: @theme_link;
+          }
+        }
+        .bot {
+          margin-top: 0;
+          padding-top: .25em;
+          text-align: center;
+          font-size: 80%;
+          vertical-align: center;
+          letter-spacing: .4em;     
+        }
+      }
+    }
+
+    .options-wrapper {
+      padding-bottom: 3em;
+    }
+
+    .bar {
+      float: right;
+      position: relative;
+      font-size: 80%;
+
+      background-color: @theme_background;
+      border: .1em solid @theme_border;
+      margin: 1em 0 .25em 0.5em;
+      display: inline-block;
+      i {
+        padding: 1em .5em;
+        position: relative;
+        top: .1em;
+      }
+      a {
+        width: 5em;
+        border: none;
+        border-left: .1em solid @theme_border;
+        padding: 0 1em;
+        margin-left: -.25em;
+
+        &.active {
+          background-color: @theme_focus;
+        }
+      }
+
+    }
+
+
+    table {
+      width: 100%;
+      td {
+        text-align: center;
+      }
+      td:nth-child(2) {
+        text-align: left;
+      }
+      .icon-globe {
+        color: grey;
+
+      }
+      .icon-globe:hover {
+        color: @theme_link;
+      }
+
+      thead {
+        .td-active {
+          background-color: @theme_border;
+        }
+        td {
+          cursor: pointer;
+          b {
+            float: left;
+          }
+          i {
+            float: right;
+          }
+        }
+        td:nth-child(1) {
+          width: 1em;
+        }
+      }
+    }
+
+    .modal {
+      padding: 2em 2em 1em 2em;
+      background-color:white;
+      border: .1em solid @theme_link;
+      background-color: #F2F2F2;
+
+      #close-modal {
+        float: right;
+        margin: -1.5em;
+        font-size: 105%;
+        color: @theme_text;
+      }
+      .packages {
+        .package-list {
+          margin-left: 2em;
+          line-height: .5em;
+        }
+        border: .1em dotted @theme_border;
+        padding: .25em;
+      }
+      position: absolute;
+      left: 40%;
+      top: 40%;
+      display: block;
+      width: 20%;
+    }
+
+  }
+}

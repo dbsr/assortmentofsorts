@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+    <title>Login</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+             {% if warning %}
+             <div class="alert alert-error"><strong>Verkeerde gebruikersnaam en/of wachtwoord.</strong></div>
+            {% endif %}
+    <div class="well">
+        <form method="post" class="horizontal-form">
+           <div class="control-group">
+                <label for="inputName" class="control-label">gebruikersnaam</label>
+                <div class="controls">
+                    <input id="inputName" placeholder="Gebruikersnaam" type="text" name="username"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="inputPassword" class="control-label">wachtwoord</label>
+                <div class="controls">
+                    <input id="inputPassword" placeholder="wachtwoord" type="password" name="password" />
+                </div>
+            </div>
+            <button class="btn" type="submit">Log in</button>
+        </form>
+    </div>
+</body>
+</html>

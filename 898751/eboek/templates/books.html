@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Eboek{% endblock %}
+{% block content %}
+<div style="padding-top: 30px; margin-bottom: 59px;">
+    <form class="form-horizontal" action="/search" method="POST">
+        <input type="submit" class="btn btn-primary" align="right" style="height: 40px; width: 125px; float: right; margin-top: -38px; font-size: 18px; margin-left: 10px;" value="zoek"/>
+        <input type="text" name="query" class="input-large" style="float: right; height: 30px; font-size: 20px; line-height: 25px; margin-top: -38px;">
+    </form>
+    <h2 style="font-size: 40px; margin-top 10px; ">{% block header %}{% endblock%}</h2>
+    <h4 style="font-size: 20px;">{% block sub_header %}{% endblock%}</h4>
+</div>
+{% for row in helper.books %}
+<div class="row-fluid">
+    <ul class="thumbnails">
+        {% for book in row %}
+        {% if book.in_booklist %}
+        <li class="span2" style="background-color: #caeab7;">
+        {% else %}
+        <li class="span2">
+        {% endif %}
+        <div class="thumbnail">
+            <a data-target="#myModal" data-toggle="modal" href="/booklist/modal?id={{ book._id }}">
+                {% if book.has_cover == 1 %}
+                <img style="width: 220px; height: 300px" src="{{ url_for('static', filename='img/thumbs/') }}{{ book._id }}.jpg">
+                {% else %}
+                <img style="width: 220px; height: 300px" src="{{ url_for('static', filename='img/thumbs/nocover.jpg') }}">
+                {% endif %}
+            </a>
+                <div class="caption">
+                    <h4 align="center" style="font-weight: 400;">{{ book.title }}</h4>
+                    <h4 align="center" style="font-weight: 550;">{{ book.author.name }}</h4>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endfor %}
+
+
+
+
+<div class="modal fade hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+  
+  </div>
+  <div class="modal-footer">
+  </div>
+</div>
+<script type="text/javascript">$('#myModal').on('hidden', function () {
+  $(this).removeData('modal');
+});</script>
+
+
+{% block botnav %}{% endblock %}
+
+
+{% endblock %}

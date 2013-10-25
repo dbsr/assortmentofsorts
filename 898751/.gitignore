@@ -1,0 +1,3 @@
+*.pyc
+eboek/static/*
+pid

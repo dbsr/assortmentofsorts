@@ -1,0 +1,119 @@
+html body {
+  color: #444546;
+}
+html body a {
+  text-decoration: none;
+  color: black;
+}
+html body a:hover {
+  text-decoration: none;
+  color: #00a0b0;
+}
+html body header {
+  text-align: center;
+}
+html body header .logo-wrapper {
+  display: inline-block;
+}
+html body header .logo-wrapper .top {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .40em;
+  margin-bottom: 0;
+  border-bottom: 0.1em solid #00a0b0;
+  vertical-align: center;
+  padding: 0;
+}
+html body header .logo-wrapper .top.first {
+  color: #00a0b0;
+}
+html body header .logo-wrapper .bot {
+  margin-top: 0;
+  padding-top: .25em;
+  text-align: center;
+  font-size: 80%;
+  vertical-align: center;
+  letter-spacing: .4em;
+}
+html body .options-wrapper {
+  padding-bottom: 3em;
+}
+html body .bar {
+  float: right;
+  position: relative;
+  font-size: 80%;
+  background-color: #e0e0e0;
+  border: 0.1em solid #cbcbcb;
+  margin: 1em 0 .25em 0.5em;
+  display: inline-block;
+}
+html body .bar i {
+  padding: 1em .5em;
+  position: relative;
+  top: .1em;
+}
+html body .bar a {
+  width: 5em;
+  border: none;
+  border-left: 0.1em solid #cbcbcb;
+  padding: 0 1em;
+  margin-left: -0.25em;
+}
+html body .bar a.active {
+  background-color: #edc951;
+}
+html body table {
+  width: 100%;
+}
+html body table td {
+  text-align: center;
+}
+html body table td:nth-child(2) {
+  text-align: left;
+}
+html body table .icon-globe {
+  color: grey;
+}
+html body table .icon-globe:hover {
+  color: #00a0b0;
+}
+html body table thead .td-active {
+  background-color: #cbcbcb;
+}
+html body table thead td {
+  cursor: pointer;
+}
+html body table thead td b {
+  float: left;
+}
+html body table thead td i {
+  float: right;
+}
+html body table thead td:nth-child(1) {
+  width: 1em;
+}
+html body .modal {
+  padding: 2em 2em 1em 2em;
+  background-color: white;
+  border: 0.1em solid #00a0b0;
+  background-color: #F2F2F2;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  display: block;
+  width: 20%;
+}
+html body .modal #close-modal {
+  float: right;
+  margin: -1.5em;
+  font-size: 105%;
+  color: #444546;
+}
+html body .modal .packages {
+  border: 0.1em dotted #cbcbcb;
+  padding: .25em;
+}
+html body .modal .packages .package-list {
+  margin-left: 2em;
+  line-height: .5em;
+}

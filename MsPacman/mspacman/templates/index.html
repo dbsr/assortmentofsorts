@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MsPacman PACKAGE AUDITOR v0.1</TITLe>
+    <meta charset="utf-8" />
+    <link href='/assets/ext/pure/pure-nr-min.css' rel='stylesheet' />
+    <link href='/assets/ext/elusive-iconfont/css/elusive-webfont.css' rel='stylesheet' />
+    <link href='/assets/css/style.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div class="pure-g">
+      <div class="pure-u-1-5"></div>
+      <div class="pure-u-3-5">
+        <header>
+        <div class="logo-wrapper">
+          <h2 class="top first">Ms</h2><h2 class="top last">Pacman</h2>
+          <h3 class="bot">PACKAGE AUDITOR</h3>
+        </div>
+        <nav>
+        </nav>
+        </header>
+        <div class='content'>
+          <div class="options-wrapper">
+
+            <div class="bar" id="filters">
+              <i class="icon-filter"></i>
+              {% for f in data.filters %}
+              <a href="#" title="filter matching packages" id="{{ f.filter }}" class="{{ f.state }}">{{ f.name }}</a>
+              {% endfor %}
+            </div>
+            <div class="bar" id="list-packages">
+              <i class="icon-th-list"></i>
+              <a href="#" id="selected-packages">selected packages</a>
+            </div>
+            <div class="bar" id="reload-packages">
+              <i class="icon-refresh"></i>
+              <a href="#" id="reload-packages">reload package database</a>
+            </div>
+          </div>
+          <table class="pure-table">
+            <thead>
+              <tr>
+                {% for k, v in data.thead %}
+                {% if k == data.sort.on %}
+                <td id="{{ k }}" data-sort-direction="{{ data.sort.reverse }}"><b class="td-wrapper">{{ v }}</b></td>
+                {% else %}
+                <td id="{{ k }}" data-sort-direction="-1">{{ v }}</td>
+                {% endif %}
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for pkg in data.packages %}
+              <tr class='{{ loop.cycle("", "pure-table-odd") }}'>
+                <td><input type="checkbox" name="{{ pkg[0][1] }}"></td>
+                {% for k, v in pkg %}
+                {% if k not in data.block %}
+                {% if k == 'name' %}
+                <td title="{{ data.sub_data[v] }}"><a href="/package/{{ v }}">{{ v }}</a></td>
+                {% elif k == 'url' %}
+                <td><a href="{{ v }}" target="_blank"><i class="icon-globe"></i></a></td>
+                {% else %}
+                <td>{{ v }}</td>
+                {% endif %}
+                {% endif %}
+              </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <footer>
+
+    </footer>
+  </div>
+  <div class='pure-u-1-5'></div>
+</div>
+<div id="packages-modal">
+  <a href="#" id="close-modal"><i class="icon-remove-sign"></i></a>
+  <div class="packages"></div>
+  <div class="bar"><i class="icon-download-alt"></i><a href="#" id="save">to text file</a></div>
+<div class="bar"><i class="icon-briefcase"></i><a href="#" id="copy">to clipboard</a></div>
+</div>
+<script type='text/javascript' src="/assets/ext/jquery/jquery-2.0.2.js"></script>
+<script type='text/javascript' src="/assets/js/app.js"></script>
+  </body>
+</html>

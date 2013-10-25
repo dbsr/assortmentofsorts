@@ -1,0 +1,11 @@
+<h4><i>{{ helper.modal.txt_action }}</i></h4>
+
+<div class="well well-small">
+    <h4>{{ helper.modal.book.title }} - {{ helper.modal.book.author.name }}"</h4> 
+</div>
+
+<form action="/booklist/update?{{ helper.modal.form_action }}&referrer={{ referrer}}" class="form-horizontal" method="post">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Annuleren</button>
+    <button class="btn btn-primary" type="submit">{{ helper.modal.button_value }}</button>
+</form>
+

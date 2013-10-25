@@ -1,0 +1,74 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div class='container'>
+      <span id="header-title">Addon<p style="display: inline;" class="hiblue">Profiles</p></span>
+      <div id='content'>
+        <ul class="nav nav-pills stacked">
+          <li class="dropdown">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Profiles <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="divider"></li>
+            <li><a href="#" id="create-profile">Create Profile</a></li>
+          </ul>
+          </li>
+          <li><a id="help" href="#">Help</a></li>
+          <li><a id="about" href="#">About</a></li>
+        </ul>
+        <div id='profile-page'>
+          <div class='current-profile'>
+            Profile: <h4 id='profile-name'></h4>
+            <a href=# title="Rename profile" class="icons edit-profile-controls" id="rename"><img src="./icons/edit.png" onmouseover='this.src="./icons/edit_on.png";' onmouseout='this.src="./icons/edit.png";' ></a>
+            <a href=# class="icons edit-profile-controls" title="Delete profile" id="delete"><img src="./icons/del.png"onmouseover='this.src="./icons/del_on.png";' onmouseout='this.src="./icons/del.png";' ></a>
+          </div>
+          <p id='default-profile' style="display: none;">* Addons selected in the default profile will always be loaded, regardless of which profile is currently active.</p>
+          <div class='title-edit' style='display: none;'>
+            <input type="text" name="pName" placeholder="profile name" id="input-profile-name">
+            <button id="submit-rename" type="button" class="btn">Rename profile</button>
+          </form>
+        </div>
+        <table class='table table-hover'>
+          <thead>
+            <tr class='hiblue'>
+              <th>Addon</th>
+              <th>Addon ID</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <div id='help-page'>
+        <h4>Help</h4>
+        <p>With this addon you can group your addons into different profiles and (de)activate them with 
+        a mouseclick. <i>Because addons deserve profiles too.</i></p>
+        <p>   
+        The <b>default</b> profile is the only profile you cannot remove or delete. Addons selected in
+        this profile will always be loaded together with the addons for the profile that is currently activated."</p>
+      </div>
+      <div id='about-page'>
+        <h4>About</h4>
+
+        <dl>
+          <dt>Why?</dt>
+          <dd>I made this addon because I noticed that certain addons I use for web development use a lot of memory/cpu. 
+          I don't need those addons all the time but I found no setting or addon that provided a simple way to activate
+          / deactivate a group of addons.</dd>
+          <dt>How?</dt>
+          <dd>This addon is completely written in <a href="http://www.coffeescript.org" target="_blank">coffeescript</a>.
+          For the css it uses <a href="http://lesscss.org" target="_blank">less</a>.
+          It makes use of the following external libraries: <a href="http://twitter.github.io/bootstrap" target="_blank">bootstrap</a> and 
+          <a href="http://www.jquery.com" target="_blank">JQuery</a>.</dd>
+          <dt>Request</dt>
+          <dd>Since this is my first Firefox addon I don't think it would be right to ask for a donation. Instead I would really appreciate feedback. Are there any features you're missing, anything that could be improved?. 
+          You can either mail me or leave a message on the mozilla addon page. 
+          <br><br>Thanks in advance!<br></br>
+          Daan (dydrmntion@gmail.com)
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </body>
+</html>

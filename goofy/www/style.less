@@ -1,0 +1,83 @@
+@import "components/bootstrap/less/mixins.less";
+@import "components/bootstrap/less/tables.less";
+@import "components/bootstrap/less/grid.less";
+@import "components/bootstrap/less/variables.less";
+@import "components/bootstrap/less/forms.less";
+@import "components/bootstrap/less/buttons.less";
+
+@linkColor: #7f7f7f;
+@linkColorHover: darken(@linkColor, 40%);
+
+body {
+    max-width: 1080px;
+    margin: 0px auto;
+    background-image: url("/img/bg_repeat.png");
+    background-repeat: repeat;
+
+    header {
+        height: 200px;
+    }
+
+    #top-section {
+
+        #left-wrapper {
+            float: left;
+        }
+
+        #mid-wrapper {
+            float: left;
+
+            .arrow {
+                margin-left: 20px;
+                margin-right: 15px;
+
+                #arrow-helper {
+                    margin-left: 24px;
+                    margin-top: -40px;
+                }
+            }
+        }
+
+        #right-wrapper {
+            float: left;
+            margin-top: -35px;
+        }
+    }
+
+    #bot-section {
+        position: relative;
+        width: 400px;
+        top: 80px;
+        left: 300px;
+        
+        label.invalid-input {
+            position: relative;
+
+            color: #d5d5d5;
+            font-variant: small-caps;
+        }
+    
+
+        input {
+            height: 25px;
+            width: 400px;
+            font-size: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            position: relative;
+            left: 90px;
+            background-color: #886B7D;
+            background-image: linear-gradient(to bottom, #886B7D, #886B7D);
+            height: 35px;
+            font-size: 20px;
+            width: 220px;
+        }
+
+        button:hover {
+            background-color: #88647a;
+        }
+
+    }
+}

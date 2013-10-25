@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- styles --!>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,900' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href='/styles/style.css' type='text/css' rel='stylesheet'/>
+        <title>Goofy :: {% block title %}{% endblock %}</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <header>
+        <div id='app-title'>GOOFY THE SPOTIFY TO DEEZER TO SPOTIFY PLAYLIST CONVERTER</div>
+            <div id='topnav'>
+                <ul class="menu-items">
+                    <li></li>
+                    <li><a href='http://github.com/dbsr/goofy' class='navlink'>GITHUB</a></li>
+                    <li><a href='http://github.com/dbsr/goofy' class='navlink'>APP INFO</a></li>
+                    <li><a href='http://github.com/dbsr/goofy' class='navlink'>CONTACT</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id='content'>
+            {% block content %}{% endblock %}
+        </div>
+        <footer></footer>
+    </body>
+    <!-- javascripts --!>
+    <script src="/js/libs.js" type='text/javascript'></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/app.js" type='text/javascript'></script>
+
+</html>

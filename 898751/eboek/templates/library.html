@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}Library{% endblock %}
+{% block content %}
+
+    {% if movies or episodes %}
+    <form class="form-horizontal well" action='process', method='POST'>
+        <fieldset>
+            {% if movies %}
+                <legend>Movies</legend>
+                    <table class="table table-bordered table-striped table-hover">
+                         <thead>
+                             <tr>
+                                 <th><input type="checkbox" id="sa_movie" name="sa_movie" class="selectall" data-checkbox-name="movie"></th>
+                                 <th><img id="eye" src={{ url_for('static', filename='img/eye.png') }}></th>
+                                 <th>name</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             {% for row in movies %}
+                                 <tr>
+                                     <td>
+                                         <input type='checkbox' id="movie_{{ loop.index0 }}" name="movie"
+                                         value={{ loop.index0 }} data-select-all="sa_movie" class="checkme" {{ row.checked }}>
+                                     </td>
+                                     <td>{{ row.is_played }}</td>
+                                     <td>{{ row }}</td>
+                                 </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            {% endif %}
+            {% if episodes %}
+                <legend>Episodes</legend>
+                    <table class="table table-bordered table-striped table-hover">
+                         <thead>
+                             <tr>
+                                <th><input type="checkbox" id="sa_episode" class="selectall" name="sa_episode" data-checkbox-name="episode"></th>
+                                 <th><img class="eye" rel="tooltip" data-original-title="media marked as watched?" src={{ url_for('static', filename='img/eye.png') }}></th>
+                                 <th>show</th>
+                                 <th>episode</th>
+                                 <th></th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             {% for row in episodes %}
+                                <tr>
+                                    <td>
+                                        <input type='checkbox' id="episode_{{ loop.index0 }}" name="episode"
+                                        value="{{ loop.index0 }}" data-select-all="sa_episode" class="checkme" {{ row.checked }}>
+                                    </td>
+                                    <td>{{ row.is_played }}</td>
+                                    <td>{{ row.show }}</td>
+                                    <td>{{ row.title }}</td>
+                                    <td>{{ row.string }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            {% endif %}
+            <div id="buttons_bot">
+                <button class="btn btn-primary" type="submit">delete selected files</button>
+                <button class="btn" type="reset">reset</button>
+            </div>
+       </fieldset>
+   </form>
+   {% else %}
+    <div class="well">
+            <p class="lead">
+                Database query returned no media files.
+                </p>
+        <button class="btn btn-primary" onclick="window.location = 'exit';">Exit</button>
+
+        </div>
+    {% endif %}
+

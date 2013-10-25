@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Exit{% endblock %}
+{% block content %}
+<script>
+    var req;
+
+    // Get an XMLHttpRequest object in a portable way.
+    function newRequest()
+    {
+      req = false;
+      // For Safari, Firefox, and other non-MS browsers
+      if (window.XMLHttpRequest) {
+        try {
+          req = new XMLHttpRequest();
+        } catch (e) {
+          req = false;
+        }
+      } else if (window.ActiveXObject) {
+        // For Internet Explorer on Windows
+        try {
+          req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+          try {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
+          } catch (e) {
+            req = false;
+          }
+        }
+    }
+}
+newRequest()
+    req.open("POST", 'exit/bye', false)
+    req.send()
+
+</script>
+
+<div style="padding-top: 100px;">
+    <div class="alert alert-success">
+        <p class="lead">
+        <h4>Success!</h4> xbmc-CleanUp has left the building.
+        </p>
+    </div>
+</div>
+
+    </script>
+
+{% endblock %}

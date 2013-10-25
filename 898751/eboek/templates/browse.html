@@ -1,0 +1,27 @@
+{% extends 'books.html' %}
+{% block header %}Bibliotheek{% endblock %}
+{% block sub_header %}pagina {{ helper.current_page }} / {{ helper.num_pages}}{% endblock %}
+
+{% block botnav %}
+<div align="center" class="pagination pagination-large">
+    <ul>
+    {% if helper.pagination.prev_page %}
+        <li><a href="/browse/page{{ helper.pagination.prev_page }}">&laquo;</a></li>
+        <li><a href="/browse/page1">1</a></li>
+    {% endif %}
+    {% for p in helper.pagination.list %}
+        {% if p %}
+            {% if p == helper.pagination.cur_page %}
+               <li class="active"><a href="/browse/page{{ p }}">{{ p }}</a></li>
+            {% else %}
+                <li><a href="/browse/page{{ p }}">{{ p }}</a></li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if helper.pagination.next_page %}
+        <li><a href="/browse/page{{ helper.pagination.last_page }}">{{ helper.pagination.last_page }}</a></li>
+        <li><a href="/browse/page{{ helper.pagination.next_page }}">&raquo;</a></li>
+    {% endif %}
+    </ul>
+</div>
+{% endblock %}

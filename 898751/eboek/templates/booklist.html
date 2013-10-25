@@ -1,0 +1,12 @@
+{% extends "books.html" %}
+{% block header %}Jouw boekenlijst{% endblock %}
+{% block botnav %}
+<div class="hero-unit">
+{% if helper.books %}
+    <a href='/process_request' class='btn btn-primary btn-large' style="font-size: 130%; font-weight: 350;">aanvraag versturen</a>
+    <a href='/booklist/update?remove=all' class='btn btn-info btn-large' style="font-size: 130%; font-weight: 350;">lijst wissen</a>
+{% else %}
+    Leeg :(
+{% endif %}
+</div>
+{% endblock %}

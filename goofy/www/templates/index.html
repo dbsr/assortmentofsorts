@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Transfer library <->{% endblock %}
+{% block content %}
+
+<div id='top-section'>
+    <div id='left-wrapper'>
+        <div class='provider deezer'>
+            <img src="/img/deezer.png" width="404" height="90" />
+            <img src="/img/deezer_active.png"  width="404" height="90" />
+        </div>
+    </div>
+    <div id='mid-wrapper'>
+        <div class='arrow'>
+            <img id="arrow-helper" src="/img/arrow_helper.png" alt="arrow_helper.png" style="position: absolute; z-index: -1;">
+            <img id="arrow" src="/img/pointer.png" alt="pointer.png">
+        </div>
+    </div>
+    <div id='right-wrapper'>
+        <div class="provider spotify">
+            <img src="/img/spotify.png" width="375" height="137" />
+            <img src="/img/spotify_active.png"  width="375" height="137" />
+        </div>
+    </div>
+</div>
+<div id='bot-section'>
+    <form class="form-search">
+        <input type="hidden" value="0" name="direction">
+        <label class="invalid-input">&nbsp;</label>
+        <button class="btn btn-primary" id="submit-button">submit</button>
+        <div class="control-group"><input type='text' id="input" name='playlist_url' placeholder='playlist url'></div>
+    </form>
+</div>
+<div id="playlist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="processing-modal-Label" aria-hidden="true">
+    <div class='modal-header'>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>GOOFY PLAYLIST</h3>
+    </div>
+    <div class='modal-body'>
+        <div id='embedded-playlist'></div>
+            <iframe id="playlist" src="" frameborder="0" width='250' height='330' scrolling='no' allowtransparency="true"></iframe>
+        <div id='create-playlist'></div>
+    </div>
+    <div class='modal-footer'>
+         <button type="button" class="btn to-provider"></button>
+         <button class="btn close-modal" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+{% endblock %}
